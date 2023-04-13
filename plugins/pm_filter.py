@@ -990,16 +990,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "start":
         buttons = [[
-                    InlineKeyboardButton('⤬ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                    InlineKeyboardButton('𝙷𝙴𝙻𝙿', callback_data="help"),
+                    InlineKeyboardButton('𝙰𝙱𝙾𝚄𝚃', callback_data="about")
                 ],[
-                    InlineKeyboardButton('♚ Bᴏᴛ Oᴡɴᴇʀ', callback_data="owner_info"),
-                    InlineKeyboardButton('⌬ Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK)
-                ],[
-                    InlineKeyboardButton('〄 Hᴇʟᴘ', callback_data='help'),
-                    InlineKeyboardButton('⍟ Aʙᴏᴜᴛ', callback_data='about'),
-                    InlineKeyboardButton('Iɴʟɪɴᴇ Sᴇᴀʀᴄʜ ☌', switch_inline_query_current_chat='')
-                ],[
-                    InlineKeyboardButton('✇ Jᴏɪɴ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ✇', url=CHNL_LNK)
+                    InlineKeyboardButton('𝙼𝙰𝙺𝙴 𝚄𝚁 𝙾𝚆𝙽 𝙱𝙾𝚃', callback_data='clone'),
                   ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -1014,6 +1008,23 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
         await query.answer(MSG_ALRT)
+
+    elif query.data == "clone":
+        buttons = [[
+            InlineKeyboardButton('𝙲𝙻𝙾𝚂𝙴', callback_data='close_data')
+        ]]
+        
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.CLONE_TXT.format(query.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
 
     elif query.data == "filters":
         buttons = [[
