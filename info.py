@@ -46,6 +46,10 @@ DATABASE_URI = environ.get('DATABASE_URI', "")
 DATABASE_NAME = environ.get('DATABASE_NAME', "Rajappan")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
+#Clone
+CLONE_SESSIONS = {}
+CLONED_SESSIONS = []
+
 # Others
 VERIFY = bool(environ.get('VERIFY', False))
 SHORTLINK_URL = environ.get('SHORTLINK_URL', 'shorturllink.in')
