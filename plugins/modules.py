@@ -2,6 +2,7 @@ import time
 import random
 from pyrogram import Client, filters
 from Script import script
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputMediaPhoto
 
 CMD = ["/", "."]
 
