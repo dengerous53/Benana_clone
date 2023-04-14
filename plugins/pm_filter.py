@@ -1611,11 +1611,11 @@ async def auto_filter(client, msg, spoll=False):
                     ]])
                     imdb=await get_poster(search)
                     if imdb and imdb.get('poster'):
-                        m=await message.reply_sticker("CAACAgIAAxkBAAEIkrdkOPg3_48LaH6yCpug5PU_xtcRzAACVQADr8ZRGmTn_PAl6RC_LwQ")
-                        await asyncio.sleep(3)
+                        m=await message.reply_sticker("CAACAgIAAxkBAAEIkztkOTNMchD-DTt_3EWvl2bavAktOAACTxgAAn3d8UjJlGOnEG3H8S8E")
+                        await asyncio.sleep(5)
                         await m.delete()
                         lallu=await message.reply_photo(photo=imdb.get('poster'), caption=SPELL_TXT.format(mention=message.from_user.mention, query=search, title=imdb.get('title'), genres=imdb.get('genres'), year=imdb.get('year'), rating=imdb.get('rating'), short=imdb.get('short_info'), url=imdb['url']), reply_markup=reply_markup)
-                        await asyncio.sleep(60)                   
+                        await asyncio.sleep(200)                   
                         await lallu.delete()
                         return
                     else:
