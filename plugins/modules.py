@@ -27,5 +27,5 @@ async def help(client, message):
         text=script.HELP_TXT,
         reply_markup=reply_markup,
         parse_mode=enums.ParseMode.HTML,
-        reply_to_message_id=update.id
+        reply_to_message_id=message.id
     )
