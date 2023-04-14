@@ -6,7 +6,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyrogram.errors.exceptions.bad_request_400 import AccessTokenExpired, AccessTokenInvalid
 
-from info import API_ID, API_HASH, ADMINS, CLONE_SESSIONS, CLONED_SESSIONS
+from info import API_ID, API_HASH, ADMINS
 from info import DATABASE_URI as MONGO_URL
 
 
