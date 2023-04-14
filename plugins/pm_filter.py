@@ -1199,12 +1199,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "inst":
         await query.answer(text=script.INST_TXT, show_alert=True)
 
+    elif query.data == "make":
+        await query.answer(text=script.MAKE_TXT, show_alert=True)
+
     elif query.data == "start":
         buttons = [[
                     InlineKeyboardButton('𝙷𝙴𝙻𝙿', callback_data="help"),
                     InlineKeyboardButton('𝙰𝙱𝙾𝚄𝚃', callback_data="about")
                 ],[
-                    InlineKeyboardButton('𝙼𝙰𝙺𝙴 𝚄𝚁 𝙾𝚆𝙽 𝙱𝙾𝚃', callback_data='clone'),
+                    InlineKeyboardButton('𝙼𝙰𝙺𝙴 𝚄𝚁 𝙾𝚆𝙽 𝙱𝙾𝚃', callback_data='make'),
                   ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
