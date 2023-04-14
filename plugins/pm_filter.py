@@ -37,6 +37,16 @@ logger.setLevel(logging.ERROR)
 BUTTONS = {}
 SPELL_CHECK = {}
 
+SPELL_TXT = """➼ 𝑯𝒆𝒚 {mention}
+
+𝚄𝚛 𝚛𝚎𝚚𝚞𝚎𝚜𝚝𝚎𝚍 𝚖𝚘𝚟𝚒𝚎𝚜 𝚜𝚙𝚎𝚕𝚕𝚒𝚗𝚐 𝚒𝚜 𝚒𝚗𝚌𝚘𝚛𝚛𝚎𝚌𝚝 𝚝𝚑𝚎 𝚌𝚘𝚛𝚛𝚎𝚌𝚝 𝚜𝚙𝚎𝚕𝚕𝚒𝚗𝚐𝚜 𝚒𝚜 𝚐𝚒𝚟𝚎𝚗 𝚋𝚎𝚕𝚕𝚘𝚠
+
+➣ 𝚜𝚙𝚎𝚕𝚕𝚒𝚗𝚐: {title}
+
+𝙲𝙷𝙴𝙲𝙺 𝚃𝙷𝙴 𝙸𝙽𝚂𝚃𝚁𝚄𝙲𝚃𝙸𝙾𝙽𝚂
+
+ᴄʟɪᴄᴋ ᴜʀ ᴄᴜʀʀᴇɴᴛ ʟᴀɴɢᴜᴀɢᴇ ʙᴜᴛᴛᴏɴ ᴀɴᴅ ᴄʜᴇᴄᴋ ᴛʜᴇ ɪɴꜱᴛʀᴜᴄᴛɪᴏɴꜱ 😌
+"""
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
@@ -988,6 +998,18 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "sinfo":
         await query.answer(text=script.SINFO, show_alert=True)
 
+    elif query.data == "tam":
+        await query.answer(text=script.TAM_TXT, show_alert=True)
+
+    elif query.data == "bet":
+        await query.answer(text=script.HIN_TXT, show_alert=True)
+
+    elif query.data == "eng":
+        await query.answer(text=script.ENG_TXT, show_alert=True)
+
+    elif query.data == "inst":
+        await query.answer(text=script.INST_TXT, show_alert=True)
+
     elif query.data == "start":
         buttons = [[
                     InlineKeyboardButton('𝙷𝙴𝙻𝙿', callback_data="help"),
@@ -1375,25 +1397,41 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.edit_reply_markup(reply_markup)
     await query.answer(MSG_ALRT)
 
+
     
 async def auto_filter(client, msg, spoll=False):
-    reqstr1 = msg.from_user.id if msg.from_user else 0
-    reqstr = await client.get_users(reqstr1)
     if not spoll:
         message = msg
-        settings = await get_settings(message.chat.id)
-        if message.text.startswith("/"): return  # ignore commands
         if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
             return
-        if len(message.text) < 100:
+        if 2 < len(message.text) < 100:
             search = message.text
-            files, offset, total_results = await get_search_results(message.chat.id ,search.lower(), offset=0, filter=True)
+            files, offset, total_results = await get_search_results(message.chat.id, search.lower(), offset=0, filter=True)
             if not files:
-                if settings["spell_check"]:
-                    return await advantage_spell_chok(client, msg)
+                if SPELL_MODE:  
+                    reply = search.replace(" ", "+")
+                    reply_markup = InlineKeyboardMarkup([[
+                        InlineKeyboardButton("📁𝙸𝙽𝚂𝚃𝚁𝚄𝙲𝚃𝙸𝙾𝙽𝚂📁", callback_data="inst")
+                    ],[
+                        InlineKeyboardButton("ᴍᴀʟ", callback_data="mal"),
+                        InlineKeyboardButton("ᴛᴀᴍ", callback_data="tam"),
+                        InlineKeyboardButton("ʜɪɴ", callback_data="bet"),
+                        InlineKeyboardButton("ᴇɴɢ", callback_data="eng")
+                    ],[
+                        InlineKeyboardButton("🔍ꜱᴇᴀʀᴄʜ ɢᴏᴏɢʟ🔎", url=f"https://google.com/find?q={reply}")
+                    ]])
+                    imdb=await get_poster(search)
+                    if imdb and imdb.get('poster'):
+                        m=await message.reply_sticker("CAACAgIAAxkBAAEIkrdkOPg3_48LaH6yCpug5PU_xtcRzAACVQADr8ZRGmTn_PAl6RC_LwQ")
+                        await asyncio.sleep(3)
+                        await m.delete()
+                        lallu=await message.reply_photo(photo=imdb.get('poster'), caption=SPELL_TXT.format(mention=message.from_user.mention, query=search, title=imdb.get('title'), genres=imdb.get('genres'), year=imdb.get('year'), rating=imdb.get('rating'), short=imdb.get('short_info'), url=imdb['url']), reply_markup=reply_markup)
+                        await asyncio.sleep(60)                   
+                        await lallu.delete()
+                        return
+                    else:
+                        return
                 else:
-                    if NO_RESULTS_MSG:
-                        await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, search)))
                     return
         else:
             return
