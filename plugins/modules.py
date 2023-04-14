@@ -23,7 +23,7 @@ async def help(client, message):
     reply_markup = InlineKeyboardMarkup(buttons)
     
     await client.send_message(
-        chat_id=update.chat.id,
+        chat_id=message.chat.id,
         text=script.HELP_TXT,
         reply_markup=reply_markup,
         parse_mode=enums.ParseMode.HTML,
