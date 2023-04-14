@@ -50,6 +50,8 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 CLONE_SESSIONS = {}
 CLONED_SESSIONS = []
 
+LANGUAGES = ["malayalam", "tamil", "english", "hindi", "telugu", "kannada"]
+
 # Others
 VERIFY = bool(environ.get('VERIFY', False))
 SHORTLINK_URL = environ.get('SHORTLINK_URL', 'shorturllink.in')
