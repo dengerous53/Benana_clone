@@ -772,10 +772,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         reply_markup=InlineKeyboardMarkup(
                             [
                              [
-                              InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK),
-                              InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
-                           ],[
-                              InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="t.me/creatorbeatz")
+                              InlineKeyboardButton('𝙾𝚆𝙽𝙴𝚁', url='t.me/lallu_tgs'),
                              ]
                             ]
                         )
@@ -844,10 +841,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                  InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK),
-                  InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
-               ],[
-                  InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="t.me/creatorbeatz")
+                  InlineKeyboardButton('𝙾𝚆𝙽𝙴𝚁', url='t.me/lallu_tgs'),
                  ]
                 ]
             )
@@ -1202,10 +1196,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "make":
         await query.answer(text=script.MAKE_TXT, show_alert=True)
 
+    elif query.data == "abu":
+        await query.answer(text=script.ABU_TXT, show_alert=True)
+
     elif query.data == "start":
         buttons = [[
-                    InlineKeyboardButton('𝙷𝙴𝙻𝙿', callback_data="help"),
-                    InlineKeyboardButton('𝙰𝙱𝙾𝚄𝚃', callback_data="about")
+                    InlineKeyboardButton('🥱𝙾𝚠𝚗𝚎𝚛', callback_data="help"),
+                    InlineKeyboardButton('🤨𝙰𝙱𝙾𝚄𝚃', callback_data="abu")
                 ],[
                     InlineKeyboardButton('𝙼𝙰𝙺𝙴 𝚄𝚁 𝙾𝚆𝙽 𝙱𝙾𝚃', callback_data='make'),
                   ]]
