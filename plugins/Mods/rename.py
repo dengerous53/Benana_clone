@@ -10,7 +10,7 @@ import random
 
 @Client.on_message( filters.private & (filters.document | filters.audio | filters.video))
 async def rename_start(client, message):
-    if (LAZY_MODE==True):
+    if (RENAME_MODE==True):
         if message.from_user.id in ADMINS :
             file = getattr(message, message.media.value)
             filesize = humanize.naturalsize(file.file_size) 
@@ -20,7 +20,7 @@ async def rename_start(client, message):
                        [ InlineKeyboardButton("𝙲𝙻𝙾𝚂𝙴", callback_data="cancel") ]]
             await message.reply_text(text=text, reply_to_message_id=message.id, reply_markup=InlineKeyboardMarkup(buttons))
 
-        elif message.from_user.id in LAZY_RENAMERS :
+        elif message.from_user.id:
             file = getattr(message, message.media.value)
             filesize = humanize.naturalsize(file.file_size) 
             filename = file.file_name
