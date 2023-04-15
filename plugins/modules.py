@@ -44,7 +44,7 @@ async def help(client, message):
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.send_photo(
            photo=random.choice(ADD_ME),
-           text=script.RULES_TXT,
+           caption=script.RULES_TXT,
            chat_id=message.chat.id,
            reply_markup=reply_markup,
            parse_mode=enums.ParseMode.HTML,
