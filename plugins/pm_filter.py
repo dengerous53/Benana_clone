@@ -1648,7 +1648,7 @@ async def auto_filter(client, msg, spoll=False):
                         m=await message.reply_sticker("CAACAgIAAxkBAAEIkztkOTNMchD-DTt_3EWvl2bavAktOAACTxgAAn3d8UjJlGOnEG3H8S8E")
                         await asyncio.sleep(5)
                         await m.delete()
-                        lallu=await message.reply_photo(photo=imdb.get('poster'), caption=SPELL_TXT.format(mention=message.from_user.mention, query=search, title=imdb.get('title'), genres=imdb.get('genres'), year=imdb.get('year'), rating=imdb.get('rating'), short=imdb.get('short_info'), url=imdb['url']), reply_markup=reply_markup)
+                        lallu=await message.reply_photo(photo="https://telegra.ph/file/3553b5dcc3b12e9ac503c.jpg", caption=SPELL_TXT.format(mention=message.from_user.mention, query=search, title=imdb.get('title'), genres=imdb.get('genres'), year=imdb.get('year'), rating=imdb.get('rating'), short=imdb.get('short_info'), url=imdb['url']), reply_markup=reply_markup)
                         await asyncio.sleep(200)                   
                         await lallu.delete()
                         return
