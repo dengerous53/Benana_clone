@@ -36,18 +36,18 @@ async def help(client, message):
     )
 
 @Client.on_message(filters.command(["rules"]) & filters.private, group=1)
-async def help(client, message):
+async def help(query, message):
         buttons = [[
                     InlineKeyboardButton('𝚁𝚄𝙻𝙴𝚂', callback_data="rule"),
                   ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
-            client.message.chat.id, 
-            clieny.message.id, 
+            query.message.chat.id, 
+            query.message.id, 
             random.choice(ADD_ME)
         )
-        await client.message.edit_text(
+        await query.message.edit_text(
             text=script.RULES_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
