@@ -35,7 +35,7 @@ async def help(client, message):
         reply_to_message_id=message.id
     )
 
-@Client.on_message(filters.command(["rules"]) & filters.private, group=1)
+@Client.on_message(filters.command(["rules"]))
 async def help(client, message):
         buttons = [[
                     InlineKeyboardButton('𝚁𝚄𝙻𝙴𝚂', callback_data="rule"),
