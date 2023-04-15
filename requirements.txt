@@ -11,3 +11,4 @@ datetime
 pytz
 aiohttp
 openai==0.25.0
+humanize
