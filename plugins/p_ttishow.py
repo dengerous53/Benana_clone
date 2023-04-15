@@ -39,7 +39,7 @@ async def save_group(bot, message):
             await bot.leave_chat(message.chat.id)
             return
         buttons = [[
-                    InlineKeyboardButton('𝙷𝙴𝙻𝙿𝙿', url=GRP_LNK),
+                    InlineKeyboardButton('😜𝙷𝙴𝙻𝙿', callback_data='ghelp'),
                   ]]
         reply_markup=InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -60,7 +60,7 @@ async def save_group(bot, message):
                                                  caption=(script.MELCOW_ENG.format(u.mention, message.chat.title)),
                                                  reply_markup=InlineKeyboardMarkup(
                                                                          [[
-                                                                           InlineKeyboardButton('𝚁𝚄𝙻𝙴𝚂', callback_data='rule')
+                                                                           InlineKeyboardButton('🤪𝚁𝚄𝙻𝙴𝚂', callback_data='rule')
                                                                          ]]
                                                  ),
                                                  parse_mode=enums.ParseMode.HTML
