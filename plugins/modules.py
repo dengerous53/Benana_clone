@@ -32,7 +32,7 @@ async def help(client, message):
     reply_markup = InlineKeyboardMarkup(buttons)    
     await client.send_photo(
         chat_id=message.chat.id,
-        photo=random.choice(ADD_ME),
+        photo="https://telegra.ph/file/8f8cf8d70d38e91a0f4be.jpg",
         caption=script.HELP_TXT,
         parse_mode=enums.ParseMode.HTML,
         reply_to_message_id=message.id
