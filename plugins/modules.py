@@ -42,7 +42,7 @@ async def help(query, message):
                   ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        await query.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
             random.choice(ADD_ME)
