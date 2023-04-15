@@ -57,10 +57,10 @@ async def save_group(bot, message):
                     except:
                         pass
                 temp.MELCOW['welcome'] = await message.reply_text(
-                                                 caption=(script.MELCOW_ENG.format(u.mention, message.chat.title)),
+                                                 text=(script.MELCOW_ENG.format(u.mention, message.chat.title)),
                                                  reply_markup=InlineKeyboardMarkup(
                                                                          [[
-                                                                           InlineKeyboardButton('𝚁𝚄𝙻𝙴𝚂', callback_data='rules')
+                                                                           InlineKeyboardButton('𝚁𝚄𝙻𝙴𝚂', callback_data='rule')
                                                                          ]]
                                                  ),
                                                  parse_mode=enums.ParseMode.HTML
