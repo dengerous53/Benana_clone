@@ -20,7 +20,7 @@ async def rename_start(client, message):
                        [ InlineKeyboardButton("𝙲𝙻𝙾𝚂𝙴", callback_data="cancel") ]]
             await message.reply_text(text=text, reply_to_message_id=message.id, reply_markup=InlineKeyboardMarkup(buttons))
 
-        elif message.from_user.id in ADMINS
+        elif message.from_user.id :
             file = getattr(message, message.media.value)
             filesize = humanize.naturalsize(file.file_size) 
             filename = file.file_name
