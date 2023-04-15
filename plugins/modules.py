@@ -10,6 +10,11 @@ ADD_ME = ["https://telegra.ph/file/45991424ebfe111f195e4.jpg",
           "https://telegra.ph/file/8f8cf8d70d38e91a0f4be.jpg",
           "https://telegra.ph/file/3f8ad73dbc9fcf8ae23e7.jpg",
           "https://telegra.ph/file/11cb83b62098072282b30.jpg",
+          "https://telegra.ph/file/115f999422a28eecc95cc.jpg",
+          "https://telegra.ph/file/3553b5dcc3b12e9ac503c.jpg",
+          "https://telegra.ph/file/903f1ca13c4fecc3bf4c9.jpg",
+          "https://telegra.ph/file/680f4152c59df899e7c0b.jpg",
+          "https://telegra.ph/file/31e53bdab169a8784433b.jpg",
 ]
 
 @Client.on_message(filters.command(["help"]) & filters.private, group=1)
