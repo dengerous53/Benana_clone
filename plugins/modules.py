@@ -42,13 +42,11 @@ async def help(query, message):
                   ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.edit_message_media(
-            message.chat.id, 
-            message.id, 
-            random.choice(ADD_ME)
-        )
-        await query.message.edit_text(
-            text=script.RULES_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
+        await client.send_photo(
+           photo=random.choice(ADD_ME),
+           text=script.RULES_TXT,
+           chat_id=message.chat.id,
+           reply_markup=reply_markup,
+           parse_mode=enums.ParseMode.HTML,
+           reply_to_message_id=message.id
+       )
