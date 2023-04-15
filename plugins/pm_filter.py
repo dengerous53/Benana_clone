@@ -1201,7 +1201,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "start":
         buttons = [[
-                    InlineKeyboardButton('🥱𝙾𝚠𝚗𝚎𝚛', callback_data="help"),
+                    InlineKeyboardButton('🥱𝙾𝚠𝚗𝚎𝚛', url='t.me/lallu_tgs'),
                     InlineKeyboardButton('🤨𝙰𝙱𝙾𝚄𝚃', callback_data="abu")
                 ],[
                     InlineKeyboardButton('𝙼𝙰𝙺𝙴 𝚄𝚁 𝙾𝚆𝙽 𝙱𝙾𝚃', callback_data='make'),
