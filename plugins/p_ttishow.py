@@ -56,7 +56,7 @@ async def save_group(bot, message):
                         await (temp.MELCOW['welcome']).delete()
                     except:
                         pass
-                temp.MELCOW['welcome'] = await message.reply_phot(
+                temp.MELCOW['welcome'] = await message.reply_photo(
                                                  photo="https://telegra.ph/file/115f999422a28eecc95cc.jpg",
                                                  caption=(script.MELCOW_ENG.format(u.mention, message.chat.title)),
                                                  reply_markup=InlineKeyboardMarkup(
