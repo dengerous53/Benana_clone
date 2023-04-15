@@ -30,9 +30,8 @@ async def help(client, message):
             InlineKeyboardButton('Sᴛᴀᴛᴜs', callback_data='stats')
         ]]    
     reply_markup = InlineKeyboardMarkup(buttons)    
-    await client.send_photo(
+    await client.send_message(
         chat_id=message.chat.id,
-        photo="https://telegra.ph/file/8f8cf8d70d38e91a0f4be.jpg",
         caption=script.HELP_TXT,
         parse_mode=enums.ParseMode.HTML,
         reply_to_message_id=message.id
