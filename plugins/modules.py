@@ -17,7 +17,7 @@ ADD_ME = ["https://telegra.ph/file/45991424ebfe111f195e4.jpg",
           "https://telegra.ph/file/31e53bdab169a8784433b.jpg",
 ]
 
-@Client.on_message(filters.command(["helps"]) & filters.private, group=1)
+@Client.on_message(filters.command(["help"]) & filters.private, group=1)
 async def help(client, message):
     buttons = [[
             InlineKeyboardButton('FIʟᴛᴇʀs', callback_data='filters'),
