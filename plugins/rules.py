@@ -6,6 +6,16 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQ
 
 CMD = ["/", "."]
 
+ADD_PIC = ["https://telegra.ph/file/45991424ebfe111f195e4.jpg",
+          "https://telegra.ph/file/8f8cf8d70d38e91a0f4be.jpg",
+          "https://telegra.ph/file/3f8ad73dbc9fcf8ae23e7.jpg",
+          "https://telegra.ph/file/11cb83b62098072282b30.jpg",
+          "https://telegra.ph/file/115f999422a28eecc95cc.jpg",
+          "https://telegra.ph/file/3553b5dcc3b12e9ac503c.jpg",
+          "https://telegra.ph/file/903f1ca13c4fecc3bf4c9.jpg",
+          "https://telegra.ph/file/680f4152c59df899e7c0b.jpg",
+          "https://telegra.ph/file/31e53bdab169a8784433b.jpg",
+]
 
 @Client.on_message(filters.command(["rules"]))
 async def help(client, message):
@@ -15,7 +25,7 @@ async def help(client, message):
         
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.send_photo(
-           photo=random.choice(ADD_ME),
+           photo=random.choice(ADD_PIC),
            caption=script.RULES_TXT,
            chat_id=message.chat.id,
            reply_markup=reply_markup,
