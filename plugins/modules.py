@@ -52,3 +52,26 @@ async def help(client, message):
            parse_mode=enums.ParseMode.HTML,
            reply_to_message_id=message.id
        )
+
+@Client.on_message(filters.command(["check"]))
+async def help(client, message):
+        buttons = [[
+            InlineKeyboardButton('FIʟᴛᴇʀs', callback_data='filters'),
+            InlineKeyboardButton('Fɪʟᴇ Sᴛᴏʀᴇ', callback_data='store_file')
+        ], [
+            InlineKeyboardButton('Cᴏɴɴᴇᴄᴛɪᴏɴ', callback_data='coct'),
+            InlineKeyboardButton('Exᴛʀᴀ Mᴏᴅs', callback_data='extra')
+        ], [
+            InlineKeyboardButton('Hᴏᴍᴇ', callback_data='start'),
+            InlineKeyboardButton('Sᴛᴀᴛᴜs', callback_data='stats')
+        ]]    
+        
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await client.send_photo(
+           photo=random.choice(ADD_ME),
+           caption=script.CHECK_TXT,
+           chat_id=message.chat.id,
+           reply_markup=reply_markup,
+           parse_mode=enums.ParseMode.HTML,
+           reply_to_message_id=message.id
+       )
