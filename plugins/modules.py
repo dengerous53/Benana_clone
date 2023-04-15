@@ -36,7 +36,7 @@ async def help(client, message):
     )
 
 @Client.on_message(filters.command(["rules"]) & filters.private, group=1)
-async def help(query, message):
+async def help(client, message):
         buttons = [[
                     InlineKeyboardButton('𝚁𝚄𝙻𝙴𝚂', callback_data="rule"),
                   ]]
