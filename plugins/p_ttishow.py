@@ -42,7 +42,8 @@ async def save_group(bot, message):
                     InlineKeyboardButton('𝙷𝙴𝙻𝙿𝙿', url=GRP_LNK),
                   ]]
         reply_markup=InlineKeyboardMarkup(buttons)
-        await message.reply_text(
+        await message.reply_photo(
+            photo="https://telegra.ph/file/903f1ca13c4fecc3bf4c9.jpg",
             text=f"<b>ᴛʜᴀɴᴋ yᴏᴜ ꜰᴏʀ ᴀᴅᴅɪɴɢ ᴍᴇ ɪɴ {message.chat.title} ❣️\n\nɪꜰ ᴜ ʜᴀᴠᴇ ᴀɴy ᴅᴏᴜʙᴛꜱ ᴄʟɪᴄᴋ ᴛʜᴇ ʜᴇʟᴩ ʙᴜᴛᴛᴏɴ ᴀɴᴅ ᴄʜᴇᴄᴋ ʜᴏᴡ ᴛᴏ ᴜꜱᴇ ᴍᴇ 💝.</b>",
             reply_markup=reply_markup)
     else:
