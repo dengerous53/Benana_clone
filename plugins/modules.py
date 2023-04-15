@@ -28,10 +28,8 @@ async def help(client, message):
         ], [
             InlineKeyboardButton('Hᴏᴍᴇ', callback_data='start'),
             InlineKeyboardButton('Sᴛᴀᴛᴜs', callback_data='stats')
-        ]]
-    
-    reply_markup = InlineKeyboardMarkup(buttons)
-    
+        ]]    
+    reply_markup = InlineKeyboardMarkup(buttons)    
     await client.send_photo(
         chat_id=message.chat.id,
         photo=random.choice(ADD_ME),
