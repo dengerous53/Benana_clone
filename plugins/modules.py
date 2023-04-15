@@ -6,6 +6,11 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQ
 
 CMD = ["/", "."]
 
+ADD_ME = ["https://telegra.ph/file/45991424ebfe111f195e4.jpg",
+          "https://telegra.ph/file/8f8cf8d70d38e91a0f4be.jpg",
+          "https://telegra.ph/file/3f8ad73dbc9fcf8ae23e7.jpg",
+          "https://telegra.ph/file/11cb83b62098072282b30.jpg",
+]
 
 @Client.on_message(filters.command(["help"]) & filters.private, group=1)
 async def help(client, message):
@@ -40,7 +45,7 @@ async def help(client, message):
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
+            random.choice(ADD_ME)
         )
         await query.message.edit_text(
             text=script.RULES_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
