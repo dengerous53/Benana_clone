@@ -772,7 +772,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         reply_markup=InlineKeyboardMarkup(
                             [
                              [
-                              InlineKeyboardButton('𝙾𝚆𝙽𝙴𝚁', url='t.me/lallu_tgs'),
+                              InlineKeyboardButton('𝙾𝚆𝙽𝙴𝚁', url='t.me/lallu_tgs')
                              ]
                             ]
                         )
@@ -841,7 +841,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                  InlineKeyboardButton('𝙾𝚆𝙽𝙴𝚁', url='t.me/lallu_tgs'),
+                  InlineKeyboardButton('𝙾𝚆𝙽𝙴𝚁', url='t.me/lallu_tgs')
                  ]
                 ]
             )
