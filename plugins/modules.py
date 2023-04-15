@@ -43,11 +43,11 @@ async def help(client, message):
         
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
-            query.message.chat.id, 
-            query.message.id, 
+            client.message.chat.id, 
+            clieny.message.id, 
             random.choice(ADD_ME)
         )
-        await query.message.edit_text(
+        await client.message.edit_text(
             text=script.RULES_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
