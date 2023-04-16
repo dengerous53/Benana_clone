@@ -49,7 +49,7 @@ async def start(client, message):
                     InlineKeyboardButton('🙋‍♂️𝙾𝚠𝚗𝚎𝚛', url='t.me/benana_assistbot'),
                     InlineKeyboardButton('🤷𝙰𝙱𝙾𝚄𝚃', callback_data="abu")
                 ],[
-                    InlineKeyboardButton('➕️𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚄𝚁 𝙶𝚁𝙾𝚄𝙿➕️', callback_data='make'),
+                    InlineKeyboardButton('➕️𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚄𝚁 𝙶𝚁𝙾𝚄𝙿➕️', url=f'http://t.me/{temp.U_NAME}?startgroup=true'),
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_text(
