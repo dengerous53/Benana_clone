@@ -1203,41 +1203,23 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "start":
         buttons = [[
-                    InlineKeyboardButton('🥱𝙾𝚠𝚗𝚎𝚛', url='t.me/lallu_tgs'),
-                    InlineKeyboardButton('🤨𝙰𝙱𝙾𝚄𝚃', callback_data="abu")
+                    InlineKeyboardButton(🙋‍♂️𝙾𝚠𝚗𝚎𝚛', url='t.me/benana_assistbot'),
+                    InlineKeyboardButton🤷𝙰𝙱𝙾𝚄𝚃', callback_data="abu")
                 ],[
-                    InlineKeyboardButton('𝙼𝙰𝙺𝙴 𝚄𝚁 𝙾𝚆𝙽 𝙱𝙾𝚃', callback_data='make'),
+                    InlineKeyboardButton('➕️𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚄𝚁 𝙶𝚁𝙾𝚄𝙿➕️', callback_data='make'),
                   ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
             query.message.chat.id, 
-            query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
+            query.message.id
         )
         await query.message.edit_text(
-            text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
+            text=script.CLONESTART_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
         await query.answer(MSG_ALRT)
-
-    elif query.data == "clone":
-        buttons = [[
-            InlineKeyboardButton('😏𝙲𝙻𝙾𝚂𝙴', callback_data='close_data')
-        ]]
-        
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
-            query.message.chat.id, 
-            query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
-        )
-        await query.message.edit_text(
-            text=script.CLONE_TXT.format(query.from_user.mention),
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
 
     elif query.data == "ghelp":
         buttons = [[
