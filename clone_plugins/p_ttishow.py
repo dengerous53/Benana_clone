@@ -43,7 +43,7 @@ async def save_group(bot, message):
                   ]]
         reply_markup=InlineKeyboardMarkup(buttons)
         await message.reply_photo(
-            photo="https://telegra.ph/file/903f1ca13c4fecc3bf4c9.jpg",
+            photo="https://telegra.ph/file/5b54be5ee8345292825ce.jpg",
             caption=f"<b>ᴛʜᴀɴᴋ yᴏᴜ ꜰᴏʀ ᴀᴅᴅɪɴɢ ᴍᴇ ɪɴ {message.chat.title} ❣️\n\nɪꜰ ᴜ ʜᴀᴠᴇ ᴀɴy ᴅᴏᴜʙᴛꜱ ᴄʟɪᴄᴋ ᴛʜᴇ ʜᴇʟᴩ ʙᴜᴛᴛᴏɴ ᴀɴᴅ ᴄʜᴇᴄᴋ ʜᴏᴡ ᴛᴏ ᴜꜱᴇ ᴍᴇ 💝.</b>",
             reply_markup=reply_markup)
     else:
