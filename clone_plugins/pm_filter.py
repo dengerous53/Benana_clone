@@ -1201,13 +1201,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "make":
         await query.answer(text=script.MAKE_TXT, show_alert=True)
 
-    elif query.data == "abu":
-        await query.answer(text=script.ABU_TXT, show_alert=True)
+    elif query.data == "abt":
+        await query.answer(text=script.ABT_TXT, show_alert=True)
 
     elif query.data == "start":
         buttons = [[
                     InlineKeyboardButton('🙋‍♂️𝙾𝚠𝚗𝚎𝚛', url='t.me/benana_assistbot'),
-                    InlineKeyboardButton('🤷𝙰𝙱𝙾𝚄𝚃', callback_data="abu")
+                    InlineKeyboardButton('🤷𝙰𝙱𝙾𝚄𝚃', callback_data="abt")
                 ],[
                     InlineKeyboardButton('➕️𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚄𝚁 𝙶𝚁𝙾𝚄𝙿➕️', callback_data='make'),
                   ]]
