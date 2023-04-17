@@ -60,6 +60,8 @@ async def start(client, message):
             parse_mode=enums.ParseMode.HTML
         )
         return
+        try:
+            bot = bot_username
         bot = await get_bot() 
     if AUTH_CHANNEL and not await is_subscribed(client, message):
         try:
