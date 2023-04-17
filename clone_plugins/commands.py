@@ -15,6 +15,7 @@ from database.connections_mdb import active_connection
 import re
 import json
 import base64
+bot = await get_bot() 
 logger = logging.getLogger(__name__)
 
 
