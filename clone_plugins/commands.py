@@ -19,14 +19,6 @@ logger = logging.getLogger(__name__)
 BATCH_FILES = {}
 
 bot = await ai.get_me()
-                details = {
-                    'bot_id': bot.id,
-                    'is_bot': True,
-                    'user_id': user_id,
-                    'name': bot.first_name,
-                    'token': bot_token,
-                    'username': bot.username
-                }
 
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
