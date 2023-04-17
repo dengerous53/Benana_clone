@@ -3,6 +3,7 @@ import logging
 import random
 import asyncio
 from Script import script
+from plugins.Mods.clone import bot
 from pyrogram import Client, filters, enums
 from pyrogram.errors import ChatAdminRequired, FloodWait
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
@@ -17,17 +18,6 @@ import base64
 logger = logging.getLogger(__name__)
 
 BATCH_FILES = {}
-
-await ai.start()
-bot = await ai.get_me()
-details = {
-    'bot_id': bot.id,
-    'is_bot': True,
-    'user_id': user_id,
-    'name': bot.first_name,
-    'token': bot_token,
-    'username': bot.username
- }
 
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
