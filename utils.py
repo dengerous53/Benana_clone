@@ -50,12 +50,12 @@ class temp(object):
     KEYWORD = {}
 
 class bot(object):
-    'bot_id': bot.id,
-    'is_bot': True,
-    'user_id': user_id,
-    'name': bot.first_name,
-    'token': bot_token,
-    'username': bot.username
+     bot_id: bot.id,
+     is_bot: True,
+     user_id: user_id,
+     name: bot.first_name,
+     token: bot_token,
+     username: bot.username
 
 async def is_subscribed(bot, query=None, userid=None):
     try:
