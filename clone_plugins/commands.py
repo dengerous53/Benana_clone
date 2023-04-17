@@ -46,6 +46,7 @@ async def start(client, message):
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(message.from_user.id, message.from_user.first_name)
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
+        bot = await get_bot()
     if len(message.command) != 2:
         buttons = [[
                     InlineKeyboardButton('🙋‍♂️𝙾𝚠𝚗𝚎𝚛', url='t.me/benana_assistbot'),
@@ -60,16 +61,7 @@ async def start(client, message):
             parse_mode=enums.ParseMode.HTML
         )
         return
-        bot = await get_bot()
-        bot = await ai.get_me()
-        details = {
-             'bot_id': bot.id,
-             'is_bot': True,
-             'user_id': user_id,
-             'name': bot.first_name,
-             'token': bot_token,
-             'username': bot.username
-          }
+
     if AUTH_CHANNEL and not await is_subscribed(client, message):
         try:
             invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL))
