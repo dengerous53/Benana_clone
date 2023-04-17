@@ -16,7 +16,7 @@ import re
 import json
 import base64
 logger = logging.getLogger(__name__)
-bot = await get_bot()
+
 
 BATCH_FILES = {}
 
