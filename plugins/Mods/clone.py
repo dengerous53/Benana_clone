@@ -58,6 +58,12 @@ async def on_clone(self, message):
     except Exception as e:
         logging.exception("Error while handling message.")
 
+async def get_bot():
+    await ai.start()
+    crazy = await ai.get_me()
+    await ai.stop()
+    return crazy
+
 
 @Client.on_message(filters.command("clonedbots") & filters.private)
 async def cloned_bots_list(client, message):
