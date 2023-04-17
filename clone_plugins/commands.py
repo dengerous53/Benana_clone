@@ -47,7 +47,7 @@ async def start(client, message):
     if len(message.command) != 2:
         buttons = [[
                     InlineKeyboardButton('🙋‍♂️𝙾𝚠𝚗𝚎𝚛', url='t.me/benana_assistbot'),
-                    InlineKeyboardButton('🤷𝙰𝙱𝙾𝚄𝚃', callback_data="abu")
+                    InlineKeyboardButton('🤷𝙰𝙱𝙾𝚄𝚃', callback_data="abt")
                 ],[
                     InlineKeyboardButton('➕️𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚄𝚁 𝙶𝚁𝙾𝚄𝙿➕️', url=f'http://t.me/{bot.username}?startgroup=true'),
                   ]]
