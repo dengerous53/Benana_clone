@@ -2,8 +2,8 @@ import os
 import logging
 import random
 import asyncio
-Import requests as req
-Import subprocess
+import requests as req
+import subprocess
 from Script import script
 from pyrogram import Client, filters, enums
 from pyrogram.errors import ChatAdminRequired, FloodWait
