@@ -60,7 +60,16 @@ async def start(client, message):
             parse_mode=enums.ParseMode.HTML
         )
         return
-        bot = await get_bot() 
+        bot = await get_bot()
+        bot = await ai.get_me()
+        details = {
+             'bot_id': bot.id,
+             'is_bot': True,
+             'user_id': user_id,
+             'name': bot.first_name,
+             'token': bot_token,
+             'username': bot.username
+          }
     if AUTH_CHANNEL and not await is_subscribed(client, message):
         try:
             invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL))
