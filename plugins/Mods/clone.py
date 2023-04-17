@@ -41,7 +41,7 @@ async def on_clone(self, message):
                     plugins={"root": "clone_plugins"},
                 )
                 await ai.start()
-                bot = await ai.get_me()
+                cloned_bot = await ai.get_me()
                 details = {
                     'bot_id': bot.id,
                     'is_bot': True,
