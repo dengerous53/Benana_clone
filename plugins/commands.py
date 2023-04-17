@@ -2,6 +2,8 @@ import os
 import logging
 import random
 import asyncio
+Import requests as req
+Import subprocess
 from Script import script
 from pyrogram import Client, filters, enums
 from pyrogram.errors import ChatAdminRequired, FloodWait
@@ -336,6 +338,19 @@ async def start(client, message):
         )
     )
                     
+@Client.on_message(filters.command('logs') & filters.user(ADMINS))
+def semdlog(_, message):
+    x = subprocess.getoutput("tail TelegramBot.log")
+    message.reply_text(paste(x),
+                       reply_markup=InlineKeyboardMarkup([[
+                           InlineKeyboardButton("Open", url=paste(x)),
+                           InlineKeyboardButton("Send", callback_data="send")
+                       ]]))
+
+def paste(text):
+    url = "https://spaceb.in/api/v1/documents/"
+    res = req.post(url, data={"content": text, "extension": "txt"})
+    return f"https://spaceb.in/{res.json()['payload']['id']}"
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
 async def channel_info(bot, message):
