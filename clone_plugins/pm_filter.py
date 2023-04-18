@@ -760,7 +760,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 if clicked == typed:
                     await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
                     return
-                else:
             elif settings['botpm']:
                 if clicked == typed:
                     await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
