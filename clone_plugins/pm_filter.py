@@ -1648,7 +1648,7 @@ async def auto_filter(client, msg, spoll=False):
             btn = [
                 [
                     InlineKeyboardButton(
-                        text=f"📁[{get_size(file.file_size)}] ✦{file.file_name}", url=await get_shortlink(message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
+                        text=f"📁[{get_size(file.file_size)}] ✦{file.file_name}", url=await get_shortlink(message.chat.id, f"https://telegram.me/{clonedme.U_NAME}?start=files_{file.file_id}")
                     ),
                 ]
                 for file in files
@@ -1658,11 +1658,11 @@ async def auto_filter(client, msg, spoll=False):
                 [
                     InlineKeyboardButton(
                         text=f"{file.file_name}",
-                        url=await get_shortlink(message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
+                        url=await get_shortlink(message.chat.id, f"https://telegram.me/{clonedme.U_NAME}?start=files_{file.file_id}")
                     ),
                     InlineKeyboardButton(
                         text=f"{get_size(file.file_size)}",
-                        url=await get_shortlink(message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
+                        url=await get_shortlink(message.chat.id, f"https://telegram.me/{clonedme.U_NAME}?start=files_{file.file_id}")
                     ),
                 ]
                 for file in files
@@ -1739,7 +1739,7 @@ async def auto_filter(client, msg, spoll=False):
     ])
 
     btn.insert(0, [
-        InlineKeyboardButton("⚡ Cʜᴇᴄᴋ Bᴏᴛ PM ⚡", url=f"https://t.me/{temp.U_NAME}")
+        InlineKeyboardButton("⚡ Cʜᴇᴄᴋ Bᴏᴛ PM ⚡", url=f"https://t.me/{clonedme.U_NAME}")
     ])
 
     if offset != "":
