@@ -761,7 +761,37 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
                     return
                 else:
-                    await query.answer(f"Hᴇʏ {query.from_user.first_name}, Tʜɪs Is Nᴏᴛ Yᴏᴜʀ Mᴏᴠɪᴇ Rᴇǫᴜᴇsᴛ. Rᴇǫᴜᴇsᴛ Yᴏᴜʀ's !", show_alert=True)
+            else:
+                if clicked == typed:
+                    joelkb_creatorbeatz = await client.send_cached_media(
+                        chat_id=int(FILE_CHANNEL_ID),
+                        file_id=file_id,
+                        caption=script.FILE_CHANNEL_TXT.format(title, size, query.from_user.mention, query.message.chat.title),
+                        protect_content=True if ident == "filep" else False,
+                        reply_markup=InlineKeyboardMarkup(
+                        [[
+                          InlineKeyboardButton('𒊹 ᴍᴀʟ', callback_data='malayalam'),
+                          InlineKeyboardButton('𒊹 ʜɪɴ', callback_data='hindi'),
+                          InlineKeyboardButton('𒊹 ᴛᴀᴍ', callback_data='tamil')
+                        ],[                         
+                          InlineKeyboardButton("✾𝙹𝙾𝙸𝙽 𝙼𝚈 𝙶𝚁𝙾𝚄𝙾𝙿✾", url='t.me/benana_mvs')
+                        ]]
+                    )
+                  )
+                    joelkb_msg = await query.message.reply_text(
+                        text=script.FILE_MSG.format(query.from_user.mention, title, size),                        parse_mode=enums.ParseMode.HTML,
+                        reply_markup=InlineKeyboardMarkup(
+                            [[
+                                InlineKeyboardButton("› 〉 📂ɢᴇᴛ ꜰɪʟᴇ📁", url=joelkb_creatorbeatz.link)
+                            ],[
+                                InlineKeyboardButton("🏴ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ🏴", url='https://t.me/databut')
+                            ]]
+                        )
+                    )
+                    await asyncio.sleep(600)
+                    await joelkb_creatorbeatz.delete()
+                    await joelkb_msg.delete()                    await query.answer(f"Hᴇʏ {query.from_user.first_name}, Tʜɪs Is Nᴏᴛ Yᴏᴜʀ Mᴏᴠɪᴇ Rᴇǫᴜᴇsᴛ. Rᴇǫᴜᴇsᴛ Yᴏᴜʀ's !", show_alert=True)
+
             elif settings['botpm']:
                 if clicked == typed:
                     await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
