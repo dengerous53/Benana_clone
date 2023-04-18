@@ -14,6 +14,7 @@ from database.connections_mdb import active_connection, all_connections, delete_
 from info import LANGUAGES, ADMINS, AUTH_CHANNEL, AUTH_USERS, SUPPORT_CHAT_ID, CUSTOM_FILE_CAPTION, MSG_ALRT, PICS, AUTH_GROUPS, P_TTI_SHOW_OFF, GRP_LNK, CHNL_LNK, NOR_IMG, LOG_CHANNEL, SPELL_IMG, MAX_B_TN, IMDB, \
     SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE, NO_RESULTS_MSG, VERIFY
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputMediaPhoto
+from plugins.Mods.clone import clonedme
 from pyrogram import Client, filters, enums, emoji
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
 from utils import get_size, is_subscribed, get_poster, search_gagala, temp, get_settings, save_group_settings, get_shortlink, send_all, check_verification, get_token
@@ -158,7 +159,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
                         text=f"▫️{get_size(file.file_size)} ⊳ {file.file_name}",
                         url=await get_shortlink(
                             message.chat.id,
-                            f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}",
+                            f"https://telegram.me/{clonedme.U_NAME}?start=files_{file.file_id}",
                         ),
                     ),
                 ]
@@ -171,14 +172,14 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
                         text=f"{file.file_name}",
                         url=await get_shortlink(
                             message.chat.id,
-                            f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}",
+                            f"https://telegram.me/{clonedme.U_NAME}?start=files_{file.file_id}",
                         ),
                     ),
                     InlineKeyboardButton(
                         text=f"{get_size(file.file_size)}",
                         url=await get_shortlink(
                             message.chat.id,
-                            f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}",
+                            f"https://telegram.me/{clonedme.U_NAME}?start=files_{file.file_id}",
                         ),
                     ),
                 ]
@@ -257,7 +258,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         InlineKeyboardButton("Send All !", callback_data=f"send_fall#{pre}#{message.chat.id}-{message.id}#{0}")
     ])
     btn.insert(0, [
-        InlineKeyboardButton("𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚄𝚁 𝙶𝚁𝙿", url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+        InlineKeyboardButton("𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚄𝚁 𝙶𝚁𝙿", url=f'http://t.me/{clonedme.U_NAME}?startgroup=true')
     ])
     offset = 0
 
@@ -306,7 +307,7 @@ async def next_page(bot, query):
             btn = [
                 [
                     InlineKeyboardButton(
-                        text=f"📁[{get_size(file.file_size)}] ✦{file.file_name}", url=await get_shortlink(query.message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
+                        text=f"📁[{get_size(file.file_size)}] ✦{file.file_name}", url=await get_shortlink(query.message.chat.id, f"https://telegram.me/{clonedme.U_NAME}?start=files_{file.file_id}")
                     ),
                 ]
                 for file in files
@@ -315,11 +316,11 @@ async def next_page(bot, query):
             btn = [
                 [
                     InlineKeyboardButton(
-                        text=f"{file.file_name}", url=await get_shortlink(query.message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
+                        text=f"{file.file_name}", url=await get_shortlink(query.message.chat.id, f"https://telegram.me/{clonedme.U_NAME}?start=files_{file.file_id}")
                     ),
                     InlineKeyboardButton(
                         text=f"{get_size(file.file_size)}",
-                        url=await get_shortlink(query.message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
+                        url=await get_shortlink(query.message.chat.id, f"https://telegram.me/{clonedme.U_NAME}?start=files_{file.file_id}")
                     ),
                 ]
                 for file in files
@@ -479,7 +480,7 @@ async def next_page(bot, query):
         InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs​", callback_data=f"languages#{search.replace(' ', '_')}#{key}")
     ])
     btn.insert(0, [
-        InlineKeyboardButton("⚡ Cʜᴇᴄᴋ Bᴏᴛ PM ⚡", url=f"https://t.me/{temp.U_NAME}")
+        InlineKeyboardButton("⚡ Cʜᴇᴄᴋ Bᴏᴛ PM ⚡", url=f"https://t.me/{clonedme.U_NAME}")
     ])
     try:
         await query.edit_message_reply_markup(
@@ -1209,7 +1210,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🙋‍♂️𝙾𝚠𝚗𝚎𝚛', url='t.me/benana_assistbot'),
                     InlineKeyboardButton('🤷𝙰𝙱𝙾𝚄𝚃', callback_data="abt")
                 ],[
-                    InlineKeyboardButton('➕️𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚄𝚁 𝙶𝚁𝙾𝚄𝙿➕️', callback_data='make'),
+                    InlineKeyboardButton('➕️𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚄𝚁 𝙶𝚁𝙾𝚄𝙿➕️', url=f'http://t.me/{clonedme.U_NAME}?startgroup=true'),
                   ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
