@@ -355,7 +355,7 @@ async def get_ststs(client, message):
     size = get_size(size)
     free = get_size(free)
     await kdbotz.edit_text(
-            text=script.STATUS_TXT.format(uptime, cpu, ram, files, total_users, totl_chats, size, free),
+            text=script.STATUS_TXT.format(files, total_users, totl_chats, size, free),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
