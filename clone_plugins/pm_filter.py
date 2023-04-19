@@ -43,6 +43,8 @@ RULES_PICS =["https://telegra.ph/file/255fbc98b0ea8d7646826.jpg",
 
 req_channel = -1001903368684
 
+FILE_CHANNEL_ID = -1001612403432
+
 SPELL_MODE = True
 
 SPELL_TXT = """➼ 𝑯𝒆𝒚 {mention}
@@ -159,7 +161,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
                         text=f"▫️{get_size(file.file_size)} ⊳ {file.file_name}",
                         url=await get_shortlink(
                             message.chat.id,
-                            f"https://telegram.me/{clonedme.U_NAME}?start=files_{file.file_id}",
+                            f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}",
                         ),
                     ),
                 ]
@@ -172,14 +174,14 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
                         text=f"{file.file_name}",
                         url=await get_shortlink(
                             message.chat.id,
-                            f"https://telegram.me/{clonedme.U_NAME}?start=files_{file.file_id}",
+                            f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}",
                         ),
                     ),
                     InlineKeyboardButton(
                         text=f"{get_size(file.file_size)}",
                         url=await get_shortlink(
                             message.chat.id,
-                            f"https://telegram.me/{clonedme.U_NAME}?start=files_{file.file_id}",
+                            f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}",
                         ),
                     ),
                 ]
@@ -307,7 +309,7 @@ async def next_page(bot, query):
             btn = [
                 [
                     InlineKeyboardButton(
-                        text=f"📁[{get_size(file.file_size)}] ✦{file.file_name}", url=await get_shortlink(query.message.chat.id, f"https://telegram.me/{clonedme.U_NAME}?start=files_{file.file_id}")
+                        text=f"📁[{get_size(file.file_size)}] ✦{file.file_name}", url=await get_shortlink(query.message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
                     ),
                 ]
                 for file in files
@@ -316,7 +318,7 @@ async def next_page(bot, query):
             btn = [
                 [
                     InlineKeyboardButton(
-                        text=f"{file.file_name}", url=await get_shortlink(query.message.chat.id, f"https://telegram.me/{clonedme.U_NAME}?start=files_{file.file_id}")
+                        text=f"{file.file_name}", url=await get_shortlink(query.message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
                     ),
                     InlineKeyboardButton(
                         text=f"{get_size(file.file_size)}",
@@ -480,7 +482,7 @@ async def next_page(bot, query):
         InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs​", callback_data=f"languages#{search.replace(' ', '_')}#{key}")
     ])
     btn.insert(0, [
-        InlineKeyboardButton("⚡ Cʜᴇᴄᴋ Bᴏᴛ PM ⚡", url=f"https://t.me/{clonedme.U_NAME}")
+        InlineKeyboardButton("⚡ Cʜᴇᴄᴋ Bᴏᴛ PM ⚡", url=f"https://t.me/{temp.U_NAME}")
     ])
     try:
         await query.edit_message_reply_markup(
@@ -1658,7 +1660,7 @@ async def auto_filter(client, msg, spoll=False):
             btn = [
                 [
                     InlineKeyboardButton(
-                        text=f"📁[{get_size(file.file_size)}] ✦{file.file_name}", url=await get_shortlink(message.chat.id, f"https://telegram.me/{clonedme.U_NAME}?start=files_{file.file_id}")
+                        text=f"📁[{get_size(file.file_size)}] ✦{file.file_name}", url=await get_shortlink(message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
                     ),
                 ]
                 for file in files
@@ -1668,11 +1670,11 @@ async def auto_filter(client, msg, spoll=False):
                 [
                     InlineKeyboardButton(
                         text=f"{file.file_name}",
-                        url=await get_shortlink(message.chat.id, f"https://telegram.me/{clonedme.U_NAME}?start=files_{file.file_id}")
+                        url=await get_shortlink(message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
                     ),
                     InlineKeyboardButton(
                         text=f"{get_size(file.file_size)}",
-                        url=await get_shortlink(message.chat.id, f"https://telegram.me/{clonedme.U_NAME}?start=files_{file.file_id}")
+                        url=await get_shortlink(message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
                     ),
                 ]
                 for file in files
@@ -1749,7 +1751,7 @@ async def auto_filter(client, msg, spoll=False):
     ])
 
     btn.insert(0, [
-        InlineKeyboardButton("⚡ Cʜᴇᴄᴋ Bᴏᴛ PM ⚡", url=f"https://t.me/{clonedme.U_NAME}")
+        InlineKeyboardButton("⚡ Cʜᴇᴄᴋ Bᴏᴛ PM ⚡", url=f"https://t.me/{temp.U_NAME}")
     ])
 
     if offset != "":
