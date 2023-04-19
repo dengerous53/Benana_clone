@@ -16,8 +16,9 @@ Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b>"""
 
     MAKE_TXT = """ Clone facing some probes😔 this feature open soon 🥹"""
 
-    CLONESTART_TXT = """𝙷𝚎𝚕𝚕𝚘 {},
+    CLONESTART_TXT = """𝙷𝚎𝚕𝚕𝚘 {}
 
+●Am {bot.first_name}
 ●𝙸 𝙰𝚖 𝙰 𝙿𝚘𝚠𝚎𝚛 𝙵𝚞𝚕𝚕 𝙰𝚞𝚝𝚘 𝙵𝚒𝚕𝚝𝚎𝚛 𝙱𝚘𝚝
 ●𝙰𝚍𝚍 𝙼𝚎 𝚃𝚘 𝚈𝚘𝚞𝚛 𝙶𝚛𝚘𝚞𝚙
 ●𝙼𝚊𝚔𝚎 𝙼𝚎 𝙰𝚗 𝙰𝚍𝚖𝚒𝚗 𝚃𝚑𝚎𝚛𝚎
