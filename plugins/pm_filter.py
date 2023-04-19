@@ -1835,7 +1835,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"<b>Hᴇʏ {<b>🎪 ᴛɪᴛɪʟᴇ {search}\n\n┏ 🤴 ᴀsᴋᴇᴅ ʙʏ : {message.from_user.mention}\n┣ ⚡ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : 𝐀𝐧𝐧𝐚_𝐁𝐞𝐧\n┗ 🍁 𝐏𝐚𝐫𝐫𝐞𝐧𝐭: @botechs_bot\n\nᴄʟɪᴄᴋ ᴛʜᴇ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ᴍᴏᴠɪᴇ ғɪʟᴇs ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ\n\n✫ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 ✫\n✵ ✪{message.chat.title}</b>"
+        cap = f"<b>🎪 ᴛɪᴛɪʟᴇ {search}\n\n┏ 🤴 ᴀsᴋᴇᴅ ʙʏ : {message.from_user.mention}\n┣ ⚡ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : 𝐀𝐧𝐧𝐚_𝐁𝐞𝐧\n┗ 🍁 𝐏𝐚𝐫𝐫𝐞𝐧𝐭: @botechs_bot\n\nᴄʟɪᴄᴋ ᴛʜᴇ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ᴍᴏᴠɪᴇ ғɪʟᴇs ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ\n\n✫ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 ✫\n✵ ✪{message.chat.title}</b>"
     if imdb and imdb.get('poster'):
         try:
             if message.chat.id == SUPPORT_CHAT_ID:
