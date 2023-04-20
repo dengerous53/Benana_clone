@@ -1214,6 +1214,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "start":
         buttons = [[
+                    InlineKeyboardButton('🕵️‍♂️ʜᴇʟʟ', callback_data="help")
+                ],[
                     InlineKeyboardButton('🙋‍♂️𝙾𝚠𝚗𝚎𝚛', url='t.me/benana_assistbot'),
                     InlineKeyboardButton('🤷𝙰𝙱𝙾𝚄𝚃', callback_data="abt")
                 ],[
@@ -1302,14 +1304,79 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('FIʟᴛᴇʀs', callback_data='filters'),
-            InlineKeyboardButton('Fɪʟᴇ Sᴛᴏʀᴇ', callback_data='store_file')
+            InlineKeyboardButton('ᴀ ғɪʟᴛᴇʀ', callback_data='filters'),
+            InlineKeyboardButton('ᴍ ғɪʟᴛᴇʀ', callback_data='store_file')
         ], [
-            InlineKeyboardButton('Cᴏɴɴᴇᴄᴛɪᴏɴ', callback_data='coct'),
-            InlineKeyboardButton('Exᴛʀᴀ Mᴏᴅs', callback_data='extra')
+            InlineKeyboardButton('ᴄᴏɴɴᴇᴄʏ', callback_data='coct'),
+            InlineKeyboardButton('ᴍᴏʀᴇ ʜᴇʟᴘ', callback_data='morehelp')
         ], [
-            InlineKeyboardButton('Hᴏᴍᴇ', callback_data='start'),
-            InlineKeyboardButton('Sᴛᴀᴛᴜs', callback_data='stats')
+            InlineKeyboardButton('ʜᴏᴍᴇ', callback_data='start'),
+            InlineKeyboardButton('sᴛᴀᴛᴜs', callback_data='stats')
+        ]]
+        
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id
+        )
+        await query.message.edit_text(
+            text=script.HELP_TXT.format(query.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+    elif query.data == "openai":
+        buttons = [[
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='morehelp')
+        ]]
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id 
+        )
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.OPENAI_TXT,
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+    elif query.data == "repo":
+        buttons = [[
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='morehelp')
+        ]]
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id 
+        )
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.REPO_TXT,
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+    elif query.data == "fun":
+        buttons = [[
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='morehelp')
+        ]]
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id 
+        )
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.FUN_TXT,
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+    elif query.data == "morehelp":
+        buttons = [[
+            InlineKeyboardButton('ᴏᴘᴇɴᴀɪ', callback_data='openai'),
+            InlineKeyboardButton('ғᴏᴜɴᴅ ʀᴇᴘᴏ', callback_data='repo'),
+            InlineKeyboardButton('ғɪʟᴇsᴛᴏʀᴇ', callback_data='store_file'),
+        ], [
+            InlineKeyboardButton('ғᴜɴ', callback_data='fun'),
+            InlineKeyboardButton('ʜᴏᴍᴇ', callback_data='start'),
+            InlineKeyboardButton('sᴛᴀᴛᴜs', callback_data='stats')
+        ], [
+            InlineKeyboardButton('ᴄʟᴏsᴇ', callaback_dat='close_data')
         ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -1369,14 +1436,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-    elif query.data == "button":
+     query.data == "button":
         buttons = [[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='manuelfilter')
         ]]
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id
-
         )
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
