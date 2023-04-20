@@ -1206,7 +1206,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('ʜᴇʟᴘ', callback_data="help"),
                     InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data="abu")
                 ],[
-                    InlineKeyboardButton('ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ', callback_data='make'),
+                    InlineKeyboardButton('ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ', url=f'http://t.me/{clonedme.U_NAME}?startgroup=true'),
                   ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
