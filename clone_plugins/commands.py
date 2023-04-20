@@ -42,20 +42,15 @@ async def start(client, message):
         Clone = await get_bot()
     if len(message.command) != 2:
         buttons = [[
-                    InlineKeyboardButton('🕵️‍♂️ʜᴇʟᴘ', callback_data="help")
+                    InlineKeyboardButton('🕵️‍♂️ʜᴇʟᴘ', callback_data='help')
                 ],[
                     InlineKeyboardButton('🙋‍♂️𝙾𝚠𝚗𝚎𝚛', url='t.me/benana_assistbot'),
                     InlineKeyboardButton('🤷𝙰𝙱𝙾𝚄𝚃', callback_data="abt")
                 ],[
                     InlineKeyboardButton('➕️𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚄𝚁 𝙶𝚁𝙾𝚄𝙿➕️', url=f'http://t.me/{clonedme.U_NAME}?startgroup=true'),
                   ]]
-        await client.edit_message_media(
-            client.message.chat.id, 
-            client.message.id
-        )
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.FILE_STORE_TXT,
+        await message.reply_text(
+            caption=script.CLONESTART_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
