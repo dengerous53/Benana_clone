@@ -42,6 +42,7 @@ async def start(client, message):
         Clone = await get_bot()
     if len(message.command) != 2:
         buttons = [[
+                    InlineKeyboardButton('🕵️‍♂️ʜᴇʟʟ', callback_data="help"'),
                     InlineKeyboardButton('🙋‍♂️𝙾𝚠𝚗𝚎𝚛', url='t.me/benana_assistbot'),
                     InlineKeyboardButton('🤷𝙰𝙱𝙾𝚄𝚃', callback_data="abt")
                 ],[
