@@ -49,9 +49,13 @@ async def start(client, message):
                 ],[
                     InlineKeyboardButton('➕️𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚄𝚁 𝙶𝚁𝙾𝚄𝙿➕️', url=f'http://t.me/{clonedme.U_NAME}?startgroup=true'),
                   ]]
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id
+        )
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_text(
-            text=script.CLONESTART_TXT.format(message.from_user.mention, clonedme.U_NAME, clonedme.B_NAME),
+        await query.message.edit_text(
+            text=script.FILE_STORE_TXT,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
