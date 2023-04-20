@@ -12,6 +12,16 @@ Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b>"""
     HELP_TXT = """<b>Hᴇʏ 
 Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b>"""
 
+    OPENAI_TXT = """ᴀsᴋ ʏᴏᴜʀ ǫᴜᴇsᴛɪᴏɴs ᴜsᴇ /openai ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ 
+
+ᴇɢ: /openai your text"""
+
+    REPO_TXT = """ғɴᴅ ᴀ ʀᴇᴘᴏ ɪɴ ɢɪᴛʜᴜʙ ᴜsɪɴɢ /repo ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ
+
+ᴇɢ: /repo repo name"""
+
+    FUN_TXT = """ enjoy 🤣"""
+
     CLONESTART_TXT = """𝙷𝚎𝚕𝚕𝚘 {}
 
 ɪ ᴀᴍ  <a href=https://t.me/{}>{}</a>
