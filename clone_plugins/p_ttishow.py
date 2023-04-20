@@ -42,9 +42,8 @@ async def save_group(bot, message):
                     InlineKeyboardButton('😜𝙷𝙴𝙻𝙿', callback_data='ghelp'),
                   ]]
         reply_markup=InlineKeyboardMarkup(buttons)
-        await message.reply_photo(
-            photo="https://telegra.ph/file/5b54be5ee8345292825ce.jpg",
-            caption=f"<b>ᴛʜᴀɴᴋ yᴏᴜ ꜰᴏʀ ᴀᴅᴅɪɴɢ ᴍᴇ ɪɴ {message.chat.title} ❣️\n\nɪꜰ ᴜ ʜᴀᴠᴇ ᴀɴy ᴅᴏᴜʙᴛꜱ ᴄʟɪᴄᴋ ᴛʜᴇ ʜᴇʟᴩ ʙᴜᴛᴛᴏɴ ᴀɴᴅ ᴄʜᴇᴄᴋ ʜᴏᴡ ᴛᴏ ᴜꜱᴇ ᴍᴇ 💝.</b>",
+        await message.reply_text(
+            text=f"<b>ᴛʜᴀɴᴋ yᴏᴜ ꜰᴏʀ ᴀᴅᴅɪɴɢ ᴍᴇ ɪɴ {message.chat.title} ❣️\n\nɪꜰ ᴜ ʜᴀᴠᴇ ᴀɴy ᴅᴏᴜʙᴛꜱ ᴄʟɪᴄᴋ ᴛʜᴇ ʜᴇʟᴩ ʙᴜᴛᴛᴏɴ ᴀɴᴅ ᴄʜᴇᴄᴋ ʜᴏᴡ ᴛᴏ ᴜꜱᴇ ᴍᴇ 💝.</b>",
             reply_markup=reply_markup)
     else:
         settings = await get_settings(message.chat.id)
@@ -55,9 +54,8 @@ async def save_group(bot, message):
                         await (temp.MELCOW['welcome']).delete()
                     except:
                         pass
-                temp.MELCOW['welcome'] = await message.reply_photo(
-                                                 photo="https://telegra.ph/file/115f999422a28eecc95cc.jpg",
-                                                 caption=(script.MELCOW_ENG.format(u.mention, message.chat.title)),
+                temp.MELCOW['welcome'] = await message.reply_text(
+                                                 text=(script.MELCOW_ENG.format(u.mention, message.chat.title)),
                                                  reply_markup=InlineKeyboardMarkup(
                                                                          [[
                                                                            InlineKeyboardButton('🤪𝚁𝚄𝙻𝙴𝚂', callback_data='rule')
