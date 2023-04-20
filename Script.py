@@ -20,13 +20,21 @@ Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b>"""
 
 ᴇɢ: /repo repo name"""
 
-    FUN_TXT = """ enjoy 🤣"""
-
     CLONESTART_TXT = """𝙷𝚎𝚕𝚕𝚘 {}
 
 ɪ ᴀᴍ  <a href=https://t.me/{}>{}</a>
 
 ɪ ᴀᴍ ᴀ ᴘᴏᴡᴇʀғᴜʟʟ ᴀᴜᴛᴏғɪʟᴛᴇʀ ʙᴏᴛ ᴀᴅᴅ ᴍᴇ ᴛᴏ ᴜʀ ɢʀᴘ ᴀɴᴅ ᴍᴀᴋᴇ ᴍᴇ ᴀɴ ᴀᴅᴍɪɴ ᴛʜᴇʀ ᴀɴᴅ ᴛʜᴇɴ ᴀᴍ ᴘʀᴏᴠɪᴅᴇs ᴍᴏᴠɪᴇs ᴛʜᴇʀᴇ
+"""
+
+    FUN_TXT = """Help: <b>Memes</b>
+Some dank memes for fun or whatever!
+<b>Commands and Usage:</b>
+• /throw or /dart - t𝗈 m𝖺𝗄𝖾 drat 
+• /roll or /dice - roll the dice 
+• /goal or /shoot - to make a goal or shoot
+• /luck or /cownd - Spin the Lucky
+• /runs strings
 """
 
     ABT_TXT = """🗽|𝔸𝔹𝕆𝕌𝕋 𝕄𝔼𝕊𝕊𝔸𝔾𝔼|🗽
