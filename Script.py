@@ -289,7 +289,7 @@ Nᴀᴍᴇ - {}"""
     CAPTION = """
 <b>📂 Fɪʟᴇ ɴᴀᴍᴇ : </b> <code>{file_name}</code>
 
-<b>⚙️ Fɪᴋᴇ Sɪᴢᴇ</b> <code>{file_size}</b></code>"""
+<b>⚙️ Fɪʟᴇ Sɪᴢᴇ</b> <code>{file_size}</b></code>"""
 
     IMDB_TEMPLATE_TXT = """
 <b>Query: {query}
