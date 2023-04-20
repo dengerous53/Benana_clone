@@ -1436,9 +1436,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-     query.data == "button":
+    elif query.data == "button":
         buttons = [[
-            InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='manuelfilter')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='manuelfilter')
         ]]
         await client.edit_message_media(
             query.message.chat.id, 
@@ -1452,7 +1452,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "autofilter":
         buttons = [[
-            InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='filters')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='filters')
         ]]
         await client.edit_message_media(
             query.message.chat.id, 
@@ -1466,7 +1466,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "coct":
         buttons = [[
-            InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='help')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help')
         ]]
         await client.edit_message_media(
             query.message.chat.id, 
@@ -1480,8 +1480,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "extra":
         buttons = [[
-            InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='help'),
-            InlineKeyboardButton('Aᴅᴍɪɴ', callback_data='admin')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help'),
+            InlineKeyboardButton('ᴀᴅᴍɪɴ', callback_data='admin')
         ]]
         await client.edit_message_media(
             query.message.chat.id, 
@@ -1496,7 +1496,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data == "store_file":
         buttons = [[
-            InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='help')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help')
         ]]
         await client.edit_message_media(
             query.message.chat.id, 
@@ -1511,7 +1511,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data == "admin":
         buttons = [[
-            InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='extra')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='extra')
         ]]
         await client.edit_message_media(
             query.message.chat.id, 
@@ -1525,8 +1525,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "stats":
         buttons = [[
-            InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='help'),
-            InlineKeyboardButton('⟲ Rᴇғʀᴇsʜ', callback_data='rfrsh')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help'),
+            InlineKeyboardButton('7ᴜʟ', callback_data='rfrsh')
         ]]
         await client.edit_message_media(
             query.message.chat.id, 
@@ -1548,8 +1548,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "rfrsh":
         await query.answer("Fetching MongoDb DataBase")
         buttons = [[
-            InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='help'),
-            InlineKeyboardButton('⟲ Rᴇғʀᴇsʜ', callback_data='rfrsh')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help'),
+            InlineKeyboardButton('7ᴜᴘ', callback_data='rfrsh')
         ]]
         await client.edit_message_media(
             query.message.chat.id, 
@@ -1570,8 +1570,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "owner_info":
             btn = [[
-                    InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="start"),
-                    InlineKeyboardButton("Cᴏɴᴛᴀᴄᴛ", url="t.me/creatorbeatz")
+                    InlineKeyboardButton("ʙᴀᴄᴋ", callback_data="start"),
+                    InlineKeyboardButton("ᴄʀᴇᴀᴛᴏʀ", url="t.me/Lallu_Tg")
                   ]]
             await client.edit_message_media(
                 query.message.chat.id, 
