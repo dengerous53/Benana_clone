@@ -52,10 +52,9 @@ SPELL_TXT = """➼ 𝑯𝒆𝒚 {mention}
 𝚄𝚛 𝚛𝚎𝚚𝚞𝚎𝚜𝚝𝚎𝚍 𝚖𝚘𝚟𝚒𝚎𝚜 𝚜𝚙𝚎𝚕𝚕𝚒𝚗𝚐 𝚒𝚜 𝚒𝚗𝚌𝚘𝚛𝚛𝚎𝚌𝚝 𝚝𝚑𝚎 𝚌𝚘𝚛𝚛𝚎𝚌𝚝 𝚜𝚙𝚎𝚕𝚕𝚒𝚗𝚐𝚜 𝚒𝚜 𝚐𝚒𝚟𝚎𝚗 𝚋𝚎𝚕𝚕𝚘𝚠
 
 ➣ 𝚜𝚙𝚎𝚕𝚕𝚒𝚗𝚐: {title}
+➣ 𝙳𝚊𝚝𝚎: {year}
 
-𝙲𝙷𝙴𝙲𝙺 𝚃𝙷𝙴 𝙸𝙽𝚂𝚃𝚁𝚄𝙲𝚃𝙸𝙾𝙽𝚂
-
-ᴄʟɪᴄᴋ ᴜʀ ᴄᴜʀʀᴇɴᴛ ʟᴀɴɢᴜᴀɢᴇ ʙᴜᴛᴛᴏɴ ᴀɴᴅ ᴄʜᴇᴄᴋ ᴛʜᴇ ɪɴꜱᴛʀᴜᴄᴛɪᴏɴꜱ 😌
+𝐘𝐨𝐮𝐫 𝐑𝐞𝐪𝐮𝐞𝐬𝐭𝐞𝐝 𝐌𝐨𝐯𝐢𝐞 𝐒𝐩𝐞𝐥𝐥𝐢𝐧𝐠 𝐈𝐬 𝐈𝐧𝐜𝐨𝐫𝐫𝐞𝐜𝐭 𝐂𝐡𝐞𝐜𝐤 𝐒𝐩𝐞𝐥𝐥𝐢𝐧𝐠 𝐀𝐧𝐝 𝐀𝐬𝐤 𝐀𝐠𝐚𝐢𝐧 𝐎𝐑 𝐂𝐡𝐞𝐜𝐤 𝐓𝐡𝐢𝐬 𝐌𝐨𝐯𝐢𝐞 𝐎𝐭𝐭 𝐑𝐞𝐥𝐞𝐚𝐬𝐞 𝐎𝐫 𝐍𝐨𝐭
 """
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
@@ -1615,21 +1614,14 @@ async def auto_filter(client, msg, spoll=False):
                 if SPELL_MODE:  
                     reply = search.replace(" ", "+")
                     reply_markup = InlineKeyboardMarkup([[
-                        InlineKeyboardButton("📁𝙸𝙽𝚂𝚃𝚁𝚄𝙲𝚃𝙸𝙾𝙽𝚂📁", callback_data="inst")
-                    ],[
-                        InlineKeyboardButton("ᴍᴀʟ", callback_data="mal"),
-                        InlineKeyboardButton("ᴛᴀᴍ", callback_data="tam"),
-                        InlineKeyboardButton("ʜɪɴ", callback_data="bet"),
-                        InlineKeyboardButton("ᴇɴɢ", callback_data="eng")
-                    ],[
-                        InlineKeyboardButton("🔍ꜱᴇᴀʀᴄʜ ɢᴏᴏɢʟ🔎", url=f"https://google.com/find?q={reply}")
+                        InlineKeyboardButton("🔍ꜱᴇᴀʀᴄʜ ɢᴏᴏɢʟ🔎", url=f"https://google.com/search?q={reply}")
                     ]])
                     imdb=await get_poster(search)
                     if imdb and imdb.get('poster'):
                         m=await message.reply_sticker("CAACAgIAAxkBAAEIkztkOTNMchD-DTt_3EWvl2bavAktOAACTxgAAn3d8UjJlGOnEG3H8S8E")
                         await asyncio.sleep(5)
                         await m.delete()
-                        lallu=await message.reply_photo(photo="https://telegra.ph/file/3553b5dcc3b12e9ac503c.jpg", caption=SPELL_TXT.format(mention=message.from_user.mention, query=search, title=imdb.get('title'), genres=imdb.get('genres'), year=imdb.get('year'), rating=imdb.get('rating'), short=imdb.get('short_info'), url=imdb['url']), reply_markup=reply_markup)
+                        lallu=await message.reply_photo(photo="https://telegra.ph/file/f6efd940012af67b860b0.jpg", caption=SPELL_TXT.format(mention=message.from_user.mention, query=search, title=imdb.get('title'), genres=imdb.get('genres'), year=imdb.get('year'), rating=imdb.get('rating'), short=imdb.get('short_info'), url=imdb['url']), reply_markup=reply_markup)
                         await asyncio.sleep(200)                   
                         await lallu.delete()
                         return
